@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from './api';
 import Dashboard from './components/Dashboard';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('/auth/user', { withCredentials: true })
+    api.get('/auth/user', { withCredentials: true })
       .then(res => {
         if (res.data.authenticated) {
           setUser(res.data.user);
@@ -20,7 +20,7 @@ function App() {
   }, []);
 
   const handleLogout = async () => {
-    await axios.post('/auth/logout', {}, { withCredentials: true });
+    await api.post('/auth/logout', {}, { withCredentials: true });
     setUser(null);
     setLinkedAccounts([]);
   };
@@ -70,3 +70,4 @@ function App() {
 }
 
 export default App;
+

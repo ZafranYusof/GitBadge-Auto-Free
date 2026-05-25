@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import axios from 'axios';
+import api from '../api';
 import { useTheme } from '../hooks/useTheme';
 import { useSocket } from '../hooks/useSocket';
 import AchievementCard from './AchievementCard';
@@ -76,7 +76,7 @@ export default function Dashboard({ user, linkedAccounts, onLogout }) {
 
   const fetchAchievements = async () => {
     try {
-      const res = await axios.get('/api/achievements/progress', { withCredentials: true });
+      const res = await api.get('/api/achievements/progress', { withCredentials: true });
       setAchievements(res.data);
     } catch (err) {
       console.error('Failed to fetch achievements:', err);
@@ -87,7 +87,7 @@ export default function Dashboard({ user, linkedAccounts, onLogout }) {
 
   const fetchLogs = async () => {
     try {
-      const res = await axios.get('/api/farm/logs', { withCredentials: true });
+      const res = await api.get('/api/farm/logs', { withCredentials: true });
       setLogs(res.data || []);
     } catch {}
   };
@@ -257,3 +257,4 @@ export default function Dashboard({ user, linkedAccounts, onLogout }) {
     </div>
   );
 }
+

@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import axios from 'axios';
+import api from '../api';
 import { useTheme } from '../hooks/useTheme';
 import { useSocket } from '../hooks/useSocket';
 
@@ -11,7 +11,7 @@ export default function SafetyDashboard() {
 
   const fetchStatus = useCallback(async () => {
     try {
-      const res = await axios.get('/api/safety/status', { withCredentials: true });
+      const res = await api.get('/api/safety/status', { withCredentials: true });
       setStatus(res.data);
     } catch (err) {
       console.error('Failed to fetch safety status:', err);
@@ -28,7 +28,7 @@ export default function SafetyDashboard() {
 
   const handleReset = async () => {
     try {
-      const res = await axios.post('/api/safety/reset', {}, { withCredentials: true });
+      const res = await api.post('/api/safety/reset', {}, { withCredentials: true });
       setStatus(res.data.status);
     } catch (err) {
       console.error('Failed to reset:', err);
@@ -37,7 +37,7 @@ export default function SafetyDashboard() {
 
   const handlePauseAll = async () => {
     try {
-      await axios.post('/api/safety/pause-all', {}, { withCredentials: true });
+      await api.post('/api/safety/pause-all', {}, { withCredentials: true });
     } catch (err) {
       console.error('Failed to pause:', err);
     }
@@ -46,7 +46,7 @@ export default function SafetyDashboard() {
   const handleToggleAutoPause = async () => {
     if (!status) return;
     try {
-      const res = await axios.post('/api/safety/auto-pause', {
+      const res = await api.post('/api/safety/auto-pause', {
         enabled: !status.autoPauseEnabled
       }, { withCredentials: true });
       setStatus(prev => ({ ...prev, autoPauseEnabled: res.data.autoPauseEnabled }));
@@ -279,3 +279,4 @@ export default function SafetyDashboard() {
     </div>
   );
 }
+

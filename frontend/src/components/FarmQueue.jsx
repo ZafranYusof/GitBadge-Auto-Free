@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import axios from 'axios';
+import api from '../api';
 import { useTheme } from '../hooks/useTheme';
 
 export default function FarmQueue() {
@@ -16,7 +16,7 @@ export default function FarmQueue() {
 
   const fetchQueue = async () => {
     try {
-      const res = await axios.get('/api/farm/sessions', { withCredentials: true });
+      const res = await api.get('/api/farm/sessions', { withCredentials: true });
       setQueue(res.data || []);
     } catch (err) {
       console.error('Failed to fetch queue:', err);
@@ -27,14 +27,14 @@ export default function FarmQueue() {
 
   const handlePause = async (sessionId) => {
     try {
-      await axios.post(`/api/farm/stop/${sessionId}`, {}, { withCredentials: true });
+      await api.post(`/api/farm/stop/${sessionId}`, {}, { withCredentials: true });
       fetchQueue();
     } catch (err) {}
   };
 
   const handleCancel = async (sessionId) => {
     try {
-      await axios.post(`/api/farm/stop/${sessionId}`, {}, { withCredentials: true });
+      await api.post(`/api/farm/stop/${sessionId}`, {}, { withCredentials: true });
       fetchQueue();
     } catch (err) {}
   };
@@ -156,3 +156,4 @@ export default function FarmQueue() {
     </div>
   );
 }
+

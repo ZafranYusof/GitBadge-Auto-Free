@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import axios from 'axios';
+import api from '../api';
 import { useTheme } from '../hooks/useTheme';
 
 export default function FarmHistory() {
@@ -14,7 +14,7 @@ export default function FarmHistory() {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get('/api/farm/history', { withCredentials: true });
+      const res = await api.get('/api/farm/history', { withCredentials: true });
       setHistory(res.data);
     } catch (err) {
       console.error('Failed to fetch history:', err);
@@ -129,3 +129,4 @@ export default function FarmHistory() {
     </div>
   );
 }
+

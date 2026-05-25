@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api';
 import { useTheme } from '../hooks/useTheme';
 
 export default function RateLimitIndicator() {
@@ -14,7 +14,7 @@ export default function RateLimitIndicator() {
 
   const fetchRateLimit = async () => {
     try {
-      const res = await axios.get('/api/ratelimit', { withCredentials: true });
+      const res = await api.get('/api/ratelimit', { withCredentials: true });
       setRateLimit(res.data);
     } catch {}
   };
@@ -51,3 +51,4 @@ export default function RateLimitIndicator() {
     </div>
   );
 }
+

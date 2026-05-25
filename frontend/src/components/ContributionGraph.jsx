@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import axios from 'axios';
+import api from '../api';
 import { useTheme } from '../hooks/useTheme';
 
 export default function ContributionGraph({ farmProgress }) {
@@ -16,7 +16,7 @@ export default function ContributionGraph({ farmProgress }) {
   const fetchGraph = async () => {
     setLoading(true);
     try {
-      const res = await axios.get('/api/contributions/graph', { withCredentials: true });
+      const res = await api.get('/api/contributions/graph', { withCredentials: true });
       setGraphData(res.data);
     } catch (err) {
       console.error('Failed to fetch graph:', err);
@@ -46,7 +46,7 @@ export default function ContributionGraph({ farmProgress }) {
     if (selectedDates.length === 0) return;
     setFilling(true);
     try {
-      await axios.post('/api/contributions/fill', {
+      await api.post('/api/contributions/fill', {
         dates: selectedDates,
         commitsPerDay,
         repoVisibility: 'public'
@@ -261,3 +261,4 @@ export default function ContributionGraph({ farmProgress }) {
     </div>
   );
 }
+

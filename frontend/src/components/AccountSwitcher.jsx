@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import axios from 'axios';
+import api from '../api';
 import { useTheme } from '../hooks/useTheme';
 
 export default function AccountSwitcher({ user, linkedAccounts = [] }) {
@@ -16,14 +16,14 @@ export default function AccountSwitcher({ user, linkedAccounts = [] }) {
   // Refresh accounts from server
   const refreshAccounts = useCallback(async () => {
     try {
-      const res = await axios.get('/api/accounts', { withCredentials: true });
+      const res = await api.get('/api/accounts', { withCredentials: true });
       setAccounts(res.data.linked || []);
     } catch {}
   }, []);
 
   const switchAccount = async (username) => {
     try {
-      await axios.post(`/api/accounts/switch/${username}`, {}, { withCredentials: true });
+      await api.post(`/api/accounts/switch/${username}`, {}, { withCredentials: true });
       window.location.reload();
     } catch (err) {
       console.error('Failed to switch account:', err);
@@ -32,7 +32,7 @@ export default function AccountSwitcher({ user, linkedAccounts = [] }) {
 
   const removeAccount = async (username) => {
     try {
-      await axios.delete(`/api/accounts/${username}`, { withCredentials: true });
+      await api.delete(`/api/accounts/${username}`, { withCredentials: true });
       setAccounts(prev => prev.filter(a => a.username !== username));
     } catch (err) {
       console.error('Failed to remove account:', err);
@@ -137,3 +137,4 @@ export default function AccountSwitcher({ user, linkedAccounts = [] }) {
     </div>
   );
 }
+

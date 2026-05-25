@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import axios from 'axios';
+import api from '../api';
 import { useTheme } from '../hooks/useTheme';
 
 const FARM_TYPES = [
@@ -25,7 +25,7 @@ export default function FarmControls({ farmProgress }) {
     setIsRunning(true);
     setResult(null);
     try {
-      const res = await axios.post(`/api/farm/${selectedType}`, settings, { withCredentials: true });
+      const res = await api.post(`/api/farm/${selectedType}`, settings, { withCredentials: true });
       setResult({ success: true, message: res.data.message, sessionId: res.data.sessionId });
     } catch (err) {
       setResult({ success: false, message: err.response?.data?.error || 'Farm failed' });
@@ -163,3 +163,4 @@ export default function FarmControls({ farmProgress }) {
     </div>
   );
 }
+
