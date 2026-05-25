@@ -84,21 +84,9 @@ Open http://localhost:5173 and login with GitHub.
 4. Set environment variables (see `render.yaml`)
 5. Deploy!
 
-## Pricing
-
-| Plan | Price | Features |
-|------|-------|----------|
-| Free | $0 | Pull Shark, YOLO, Quickdraw, 3 farms/day, 4 themes |
-| Monthly | $10/mo | All 47+ features, unlimited farming, 18 themes |
-| Yearly | $50/yr | Everything in Monthly, save 58% |
-| Lifetime | $100 | Pro forever, all future updates |
-| Source Code | $150 | Full source code + lifetime Pro |
-
-**Payment:** DuitNow / Bank Transfer / Touch 'n Go
-
 **Contact:** Discord `revice7463`
 
-## Want More?
+## Want More
 
 **GitBadge-Auto Pro** unlocks 47+ features:
 
