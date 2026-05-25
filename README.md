@@ -1,4 +1,4 @@
-# 🏅 GitBadge-Auto Free
+# GitBadge-Auto Free
 
 Open-source GitHub badge farming tool. Automate your way to Pull Shark, YOLO, and Quickdraw badges.
 
@@ -6,26 +6,26 @@ Open-source GitHub badge farming tool. Automate your way to Pull Shark, YOLO, an
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 ![Version](https://img.shields.io/badge/Version-3.0.0-purple?style=for-the-badge)
 
-## ✨ Features
+## Features
 
-- 🦈 **Pull Shark** — Auto-create branches, PRs, and merge them
-- 🤠 **YOLO** — Merge PRs without review for the YOLO badge
-- 🔫 **Quickdraw** — Open and close issues within 5 minutes
-- 🏅 **Badge Tracker** — Real-time progress across all GitHub achievements
-- 🗺️ **Badge Roadmap** — Visual progress toward next tier
-- 📅 **Contribution Graph** — View your GitHub contribution history
-- 📦 **Farm Queue** — Queue multiple farm jobs
-- 🎨 **4 Themes** — Hacker, Light, Dark, Midnight
-- 🔄 **Account Switcher** — Link and switch between GitHub accounts
-- 🛡️ **Safety Dashboard** — Monitor farming activity
-- 📜 **Farm History** — Track all past farming sessions
-- ⚡ **Real-time Progress** — Live updates via WebSocket
+- **Pull Shark** — Auto-create branches, PRs, and merge them
+- **YOLO** — Merge PRs without review for the YOLO badge
+- **Quickdraw** — Open and close issues within 5 minutes
+- **Badge Tracker** — Real-time progress across all GitHub achievements
+- **Badge Roadmap** — Visual progress toward next tier
+- **Contribution Graph** — View your GitHub contribution history
+- **Farm Queue** — Queue multiple farm jobs
+- **4 Themes** — Hacker, Light, Dark, Midnight
+- **Account Switcher** — Link and switch between GitHub accounts
+- **Safety Dashboard** — Monitor farming activity
+- **Farm History** — Track all past farming sessions
+- **Real-time Progress** — Live updates via WebSocket
 
-## 📸 Screenshots
+## Screenshots
 
 <!-- Add screenshots here -->
 
-## 🚀 Setup
+## Setup
 
 ### Prerequisites
 - Node.js 18+
@@ -69,14 +69,14 @@ cd frontend && npm run dev
 
 Open http://localhost:5173 and login with GitHub.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend:** React 19 + Vite + Tailwind CSS + Framer Motion
 - **Backend:** Express + Passport (GitHub OAuth) + Socket.io
 - **Database:** SQLite (better-sqlite3)
 - **API:** GitHub REST + GraphQL via Octokit
 
-## 🚀 Deploy to Render
+## Deploy to Render
 
 1. Fork this repo
 2. Create a new Web Service on [Render](https://render.com)
@@ -86,7 +86,7 @@ Open http://localhost:5173 and login with GitHub.
 
 See `render.yaml` for configuration.
 
-## ⭐ Want More?
+## Want More?
 
 **GitBadge-Auto Pro** unlocks 40+ features:
 
@@ -108,12 +108,12 @@ See `render.yaml` for configuration.
 | Smart Farm AI | ❌ | ✅ |
 | Unlimited farming | ❌ | ✅ |
 
-👉 **[Try GitBadge-Auto Pro](https://gitbadge-auto.onrender.com)**
+**[Try GitBadge-Auto Pro](https://gitbadge-auto.onrender.com)**
 
-## 📄 License
+## License
 
 MIT — do whatever you want with it.
 
-## 🤝 Contributing
+## Contributing
 
 PRs welcome! Open an issue first to discuss what you'd like to change.
