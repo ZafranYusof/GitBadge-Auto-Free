@@ -90,9 +90,6 @@ function App() {
           <div className="text-center mt-6">
             <p className="text-[11px] font-mono text-[#4a7a4a]">SOURCE_CODE: <span className="text-[#00ff41]">$150</span> (includes lifetime pro)</p>
             <p className="text-[10px] font-mono text-[#4a7a4a] mt-2">// contact: Discord <span className="text-[#00ff41]">revice7463</span></p>
-            <a href="https://gitbadge-auto.onrender.com" className="inline-block mt-4 text-xs text-[#ff9f1c] font-mono hover:underline">
-              Get Pro → gitbadge-auto.onrender.com
-            </a>
           </div>
         </div>
       </div>

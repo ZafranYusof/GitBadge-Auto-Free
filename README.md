@@ -100,7 +100,7 @@ Open http://localhost:5173 and login with GitHub.
 
 ## Want More?
 
-**[GitBadge-Auto Pro](https://gitbadge-auto.onrender.com)** unlocks 47+ features:
+**GitBadge-Auto Pro** unlocks 47+ features:
 
 - Galaxy Brain, Starstruck, Pair Extraordinaire farming
 - Token Hunter (scan leaked tokens)
