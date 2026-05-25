@@ -6,6 +6,10 @@ Open-source GitHub badge farming tool. Automate your way to Pull Shark, YOLO, an
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 ![Version](https://img.shields.io/badge/Version-3.0.0-purple?style=for-the-badge)
 
+## Live Demo
+
+https://gitbadge-auto-free.onrender.com
+
 ## Features
 
 - **Pull Shark** — Auto-create branches, PRs, and merge them
@@ -20,10 +24,6 @@ Open-source GitHub badge farming tool. Automate your way to Pull Shark, YOLO, an
 - **Safety Dashboard** — Monitor farming activity
 - **Farm History** — Track all past farming sessions
 - **Real-time Progress** — Live updates via WebSocket
-
-## Screenshots
-
-<!-- Add screenshots here -->
 
 ## Setup
 
@@ -81,32 +81,45 @@ Open http://localhost:5173 and login with GitHub.
 1. Fork this repo
 2. Create a new Web Service on [Render](https://render.com)
 3. Connect your fork
-4. Set environment variables
+4. Set environment variables (see `render.yaml`)
 5. Deploy!
 
-See `render.yaml` for configuration.
+## Pricing
+
+| Plan | Price | Features |
+|------|-------|----------|
+| Free | $0 | Pull Shark, YOLO, Quickdraw, 3 farms/day, 4 themes |
+| Monthly | $10/mo | All 47+ features, unlimited farming, 18 themes |
+| Yearly | $50/yr | Everything in Monthly, save 58% |
+| Lifetime | $100 | Pro forever, all future updates |
+| Source Code | $150 | Full source code + lifetime Pro |
+
+**Payment:** DuitNow / Bank Transfer / Touch 'n Go
+
+**Contact:** Discord `revice7463`
 
 ## Want More?
 
-**GitBadge-Auto Pro** unlocks 40+ features:
+**[GitBadge-Auto Pro](https://gitbadge-auto.onrender.com)** unlocks 47+ features:
 
-| Feature | Free | Pro |
-|---------|------|-----|
-| Pull Shark, YOLO, Quickdraw | ✅ | ✅ |
-| Galaxy Brain, Starstruck, Pair Extraordinaire | ❌ | ✅ |
-| Token Hunter (leak scanner) | ❌ | ✅ |
-| Ghost Followers & Star Boost | ❌ | ✅ |
-| Shadow Network (multi-account) | ❌ | ✅ |
-| Graph Painter | ❌ | ✅ |
-| Repo Necromancy | ❌ | ✅ |
-| GitHub SEO Optimizer | ❌ | ✅ |
-| Stalker Dashboard | ❌ | ✅ |
-| 18 Themes (full design system) | ❌ | ✅ |
-| Commit Rewriter & Laundering | ❌ | ✅ |
-| Actions Farm (automated CI) | ❌ | ✅ |
-| Honeypot Deployer | ❌ | ✅ |
-| Smart Farm AI | ❌ | ✅ |
-| Unlimited farming | ❌ | ✅ |
+- Galaxy Brain, Starstruck, Pair Extraordinaire farming
+- Token Hunter (scan leaked tokens)
+- Ghost Followers & Star Boost
+- Shadow Network (multi-account coordination)
+- Graph Painter (pixel art on contribution graph)
+- Fake Maintainer (auto-respond issues, auto-merge PRs)
+- Social Proof Generator
+- Invisible Repo (hidden repos that count for badges)
+- Fingerprint Spoofer (avoid account linking detection)
+- Repo Insurance (auto-backup to GitLab/branches)
+- Account Health Score (ban risk assessment)
+- SEO Backlinks & GitHub SEO Optimizer
+- Stalker Dashboard & Repo Necromancy
+- Commit Rewriter & Laundering
+- Actions Farm (automated CI farming)
+- Smart Farm AI & Scheduler
+- 18 Themes with full design system
+- And much more...
 
 ## License
 
