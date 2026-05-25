@@ -108,8 +108,6 @@ See `render.yaml` for configuration.
 | Smart Farm AI | ❌ | ✅ |
 | Unlimited farming | ❌ | ✅ |
 
-**[Try GitBadge-Auto Pro](https://gitbadge-auto.onrender.com)**
-
 ## License
 
 MIT — do whatever you want with it.
