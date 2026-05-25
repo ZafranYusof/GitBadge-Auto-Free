@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+:root {
+  --bronze: #CD7F32;
+  --silver: #C0C0C0;
+  --gold: #FFD700;
+  --diamond: #B9F2FF;
+
+  /* Retro Colors */
+  --retro-bg: #0a0a0f;
+  --retro-bg-alt: #0d0d1a;
+  --retro-surface: #111118;
+  --retro-surface-alt: #16161f;
+  --retro-green: #00ff41;
+  --retro-green-dim: #00cc33;
+  --retro-cyan: #00ffff;
+  --retro-cyan-dim: #00cccc;
+  --retro-amber: #ff9f1c;
+  --retro-amber-dim: #cc7f16;
+  --retro-red: #ff0055;
+  --retro-magenta: #ff2d6f;
+  --retro-text: #e0ffe0;
+  --retro-text-dim: #b8ffb8;
+  --retro-text-muted: #4a7a4a;
+  --retro-border: #1a3a1a;
+  --retro-border-glow: #00ff4130;
+
+  --glow-green: 0 0 10px #00ff4140, 0 0 20px #00ff4120, 0 0 40px #00ff4110;
+  --glow-cyan: 0 0 10px #00ffff40, 0 0 20px #00ffff20, 0 0 40px #00ffff10;
+  --glow-amber: 0 0 10px #ff9f1c40, 0 0 20px #ff9f1c20;
+
+  --shadow-card: 0 0 15px rgba(0, 255, 65, 0.05), inset 0 1px 0 rgba(0, 255, 65, 0.05);
+  --shadow-elevated: 0 0 30px rgba(0, 255, 65, 0.1), 0 0 60px rgba(0, 255, 65, 0.05);
+}
+
+/* Hacker theme (default) */
+[data-theme="hacker"] body,
+[data-theme="dark"] body,
+body {
+  font-family: 'JetBrains Mono', 'Space Mono', monospace;
+  background: var(--retro-bg);
+  color: var(--retro-text);
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --retro-bg: #f8fafc;
+  --retro-bg-alt: #f1f5f9;
+  --retro-surface: #ffffff;
+  --retro-surface-alt: #f8fafc;
+  --retro-green: #10b981;
+  --retro-green-dim: #059669;
+  --retro-cyan: #06b6d4;
+  --retro-text: #1e293b;
+  --retro-text-dim: #475569;
+  --retro-text-muted: #94a3b8;
+  --retro-border: #e2e8f0;
+  --retro-border-glow: #10b98130;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-elevated: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+[data-theme="light"] body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --retro-bg: #0a0a0f;
+  --retro-bg-alt: #0d0d1a;
+  --retro-surface: #111118;
+  --retro-surface-alt: #16161f;
+  --retro-green: #a78bfa;
+  --retro-green-dim: #8b5cf6;
+  --retro-cyan: #c4b5fd;
+  --retro-text: #e2e8f0;
+  --retro-text-dim: #cbd5e1;
+  --retro-text-muted: #64748b;
+  --retro-border: #1e293b;
+  --retro-border-glow: #a78bfa30;
+}
+
+/* Midnight theme */
+[data-theme="midnight"] {
+  --retro-bg: #0d1117;
+  --retro-bg-alt: #161b22;
+  --retro-surface: #161b22;
+  --retro-surface-alt: #1c2128;
+  --retro-green: #58a6ff;
+  --retro-green-dim: #388bfd;
+  --retro-cyan: #79c0ff;
+  --retro-text: #c9d1d9;
+  --retro-text-dim: #8b949e;
+  --retro-text-muted: #484f58;
+  --retro-border: #21262d;
+  --retro-border-glow: #58a6ff30;
+  --glow-green: 0 0 10px #58a6ff40, 0 0 20px #58a6ff20;
+  --shadow-card: 0 0 15px rgba(88, 166, 255, 0.05);
+}
+
+[data-theme="midnight"] body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0d1117;
+  color: #c9d1d9;
+}
+
+/* Base component styles */
+.retro-input {
+  background: var(--retro-bg);
+  border: 1px solid var(--retro-border);
+  color: var(--retro-text);
+  padding: 0.5rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  transition: border-color 0.2s;
+}
+
+.retro-input:focus {
+  outline: none;
+  border-color: var(--retro-green);
+  box-shadow: 0 0 0 1px var(--retro-border-glow);
+}
+
+.retro-input::placeholder {
+  color: var(--retro-text-muted);
+}
+
+.retro-select {
+  background: var(--retro-bg);
+  border: 1px solid var(--retro-border);
+  color: var(--retro-text);
+  padding: 0.5rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+.retro-card {
+  background: var(--retro-surface);
+  border: 1px solid var(--retro-border);
+  box-shadow: var(--shadow-card);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--retro-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--retro-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--retro-text-muted);
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
