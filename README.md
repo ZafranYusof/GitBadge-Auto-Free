@@ -8,7 +8,7 @@ Open-source GitHub badge farming tool. Automate your way to Pull Shark, YOLO, an
 
 ## Live Demo
 
-https://gitbadge-auto-free.onrender.com
+https://gitbadge-auto.onrender.com
 
 ## Features
 
