@@ -6,6 +6,7 @@ import { useTheme } from '../hooks/useTheme';
 export default function FarmHistory() {
   const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showGuide, setShowGuide] = useState(false);
   const { isDark } = useTheme();
 
   useEffect(() => {
@@ -78,6 +79,22 @@ export default function FarmHistory() {
 
   return (
     <div className={`rounded-2xl border overflow-hidden ${isDark ? 'bg-white/[0.02] border-white/[0.06]' : 'bg-white border-gray-200'}`}>
+      {/* How to Use Guide */}
+      <div className="mb-0 rounded-t-lg border-b border-[#1a3a1a] bg-[#0d1117]">
+        <button onClick={() => setShowGuide(!showGuide)} className="w-full px-4 py-2 text-left text-sm font-medium flex items-center justify-between text-[#00ff41]">
+          <span>📖 How to Use</span>
+          <span>{showGuide ? '▲' : '▼'}</span>
+        </button>
+        {showGuide && (
+          <div className="px-4 pb-3 text-xs space-y-1 text-[#b8ffb8]">
+            <p>1. View all past farming sessions</p>
+            <p>2. Filter by badge type (Pull Shark/YOLO/Quickdraw)</p>
+            <p>3. See success/fail stats for each session</p>
+            <p>4. Click a session for detailed logs</p>
+          </div>
+        )}
+      </div>
+
       <div className={`px-5 py-3.5 border-b ${isDark ? 'border-white/[0.06]' : 'border-gray-100'}`}>
         <div className="flex items-center justify-between">
           <h3 className={`font-semibold text-sm ${isDark ? 'text-[#b8ffb8] font-mono' : 'text-gray-900'}`}>

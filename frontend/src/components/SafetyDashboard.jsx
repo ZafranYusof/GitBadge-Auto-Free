@@ -7,6 +7,7 @@ import { useSocket } from '../hooks/useSocket';
 export default function SafetyDashboard() {
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showGuide, setShowGuide] = useState(false);
   const { isDark } = useTheme();
 
   const fetchStatus = useCallback(async () => {
@@ -83,6 +84,22 @@ export default function SafetyDashboard() {
 
   return (
     <div className="space-y-5">
+      {/* How to Use Guide */}
+      <div className="mb-4 rounded-lg border border-[#1a3a1a] bg-[#0d1117]">
+        <button onClick={() => setShowGuide(!showGuide)} className="w-full px-4 py-2 text-left text-sm font-medium flex items-center justify-between text-[#00ff41]">
+          <span>📖 How to Use</span>
+          <span>{showGuide ? '▲' : '▼'}</span>
+        </button>
+        {showGuide && (
+          <div className="px-4 pb-3 text-xs space-y-1 text-[#b8ffb8]">
+            <p>1. View farming activity metrics and rate limits</p>
+            <p>2. Monitor GitHub API usage in real-time</p>
+            <p>3. Check for warnings or risk indicators</p>
+            <p>4. Pause farming if risk level is too high</p>
+          </div>
+        )}
+      </div>
+
       {/* Page header */}
       <div>
         <h2 className={`text-2xl ${isDark ? 'text-[#00ff41] glow-green font-mono' : 'text-gray-900 font-bold'}`}>

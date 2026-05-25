@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import api from '../api';
 import { useTheme } from '../hooks/useTheme';
+import ProcessLog from './ProcessLog';
 
 const FARM_TYPES = [
   { id: 'pull-shark', name: 'Pull Shark', icon: '🦈', description: 'Create & merge PRs' },
@@ -19,18 +20,25 @@ export default function FarmControls({ farmProgress }) {
   });
   const [isRunning, setIsRunning] = useState(false);
   const [result, setResult] = useState(null);
+  const [logs, setLogs] = useState([]);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [showGuide, setShowGuide] = useState(false);
   const { isDark } = useTheme();
 
   const startFarm = async () => {
     setIsRunning(true);
+    setIsProcessing(true);
     setResult(null);
+    setLogs([]);
     try {
       const res = await api.post(`/api/farm/${selectedType}`, settings, { withCredentials: true });
       setResult({ success: true, message: res.data.message, sessionId: res.data.sessionId });
+      if (res.data.logs) setLogs(res.data.logs);
     } catch (err) {
       setResult({ success: false, message: err.response?.data?.error || 'Farm failed' });
     } finally {
       setIsRunning(false);
+      setIsProcessing(false);
     }
   };
 
@@ -38,6 +46,23 @@ export default function FarmControls({ farmProgress }) {
 
   return (
     <div className="space-y-5">
+      {/* How to Use Guide */}
+      <div className="mb-4 rounded-lg border border-[#1a3a1a] bg-[#0d1117]">
+        <button onClick={() => setShowGuide(!showGuide)} className="w-full px-4 py-2 text-left text-sm font-medium flex items-center justify-between text-[#00ff41]">
+          <span>📖 How to Use</span>
+          <span>{showGuide ? '▲' : '▼'}</span>
+        </button>
+        {showGuide && (
+          <div className="px-4 pb-3 text-xs space-y-1 text-[#b8ffb8]">
+            <p>1. Select badge type (Pull Shark / YOLO / Quickdraw)</p>
+            <p>2. Choose target repo or leave empty to auto-create</p>
+            <p>3. Set farm count and delay between actions</p>
+            <p>4. Click Start Farm</p>
+            <p>5. Monitor progress in real-time below</p>
+          </div>
+        )}
+      </div>
+
       <div>
         <h2 className={`text-2xl ${isDark ? 'text-[var(--retro-green)] font-mono font-bold' : 'text-gray-900 font-bold'}`}>
           {isDark ? '> FARM_CONTROL' : 'Farm Control'}
@@ -143,6 +168,9 @@ export default function FarmControls({ farmProgress }) {
           </div>
         </motion.div>
       )}
+
+      {/* Process Log */}
+      <ProcessLog logs={logs} isRunning={isProcessing} />
 
       {/* Result */}
       {result && (

@@ -133,10 +133,10 @@ export default function Dashboard({ user, linkedAccounts, onLogout }) {
                     <button
                       key={item.id}
                       onClick={() => { setActiveTab(item.id); setSidebarOpen(false); }}
-                      className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-mono transition-all ${
+                      className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-mono transition-all duration-200 ${
                         activeTab === item.id
-                          ? isDark ? 'bg-[var(--retro-green)]/10 text-[var(--retro-green)] border border-[var(--retro-green)]/20' : 'bg-green-50 text-green-700 border border-green-200'
-                          : isDark ? 'text-[var(--retro-text-dim)] hover:bg-[var(--retro-bg)] hover:text-[var(--retro-text)]' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                          ? isDark ? 'bg-[var(--retro-green)]/10 text-[var(--retro-green)] border-l-2 border-[var(--retro-green)] border-r-0 border-t-0 border-b-0' : 'bg-green-50 text-green-700 border-l-2 border-green-500 border-r-0 border-t-0 border-b-0'
+                          : isDark ? 'text-[var(--retro-text-dim)] hover:bg-[var(--retro-bg)] hover:text-[var(--retro-text)] border-l-2 border-transparent' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 border-l-2 border-transparent'
                       }`}
                     >
                       <span>{item.icon}</span>

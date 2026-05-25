@@ -6,6 +6,7 @@ import { useTheme } from '../hooks/useTheme';
 export default function FarmQueue() {
   const [queue, setQueue] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showGuide, setShowGuide] = useState(false);
   const { isDark } = useTheme();
 
   useEffect(() => {
@@ -80,6 +81,22 @@ export default function FarmQueue() {
 
   return (
     <div>
+      {/* How to Use Guide */}
+      <div className="mb-4 rounded-lg border border-[#1a3a1a] bg-[#0d1117]">
+        <button onClick={() => setShowGuide(!showGuide)} className="w-full px-4 py-2 text-left text-sm font-medium flex items-center justify-between text-[#00ff41]">
+          <span>📖 How to Use</span>
+          <span>{showGuide ? '▲' : '▼'}</span>
+        </button>
+        {showGuide && (
+          <div className="px-4 pb-3 text-xs space-y-1 text-[#b8ffb8]">
+            <p>1. Queue multiple farm jobs from Farm Control</p>
+            <p>2. Jobs run sequentially to avoid rate limits</p>
+            <p>3. Monitor progress of each job in real-time</p>
+            <p>4. Pause or cancel jobs as needed</p>
+          </div>
+        )}
+      </div>
+
       <div className="mb-5">
         <h2 className={`text-2xl ${isDark ? 'text-[#00ff41] glow-green font-mono' : 'text-gray-900 font-bold'}`}>
           {isDark ? '> FARM_QUEUE' : 'Farm Queue'}

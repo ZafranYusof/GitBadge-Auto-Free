@@ -180,6 +180,7 @@ function getBadgeStatus(badge, achievements) {
 
 export default function BadgeRoadmap({ achievements }) {
   const [filter, setFilter] = useState('all');
+  const [showGuide, setShowGuide] = useState(false);
   const { isDark } = useTheme();
 
   const badgesWithStatus = useMemo(() => {
@@ -210,6 +211,22 @@ export default function BadgeRoadmap({ achievements }) {
 
   return (
     <div className="space-y-5">
+      {/* How to Use Guide */}
+      <div className="mb-4 rounded-lg border border-[#1a3a1a] bg-[#0d1117]">
+        <button onClick={() => setShowGuide(!showGuide)} className="w-full px-4 py-2 text-left text-sm font-medium flex items-center justify-between text-[#00ff41]">
+          <span>📖 How to Use</span>
+          <span>{showGuide ? '▲' : '▼'}</span>
+        </button>
+        {showGuide && (
+          <div className="px-4 pb-3 text-xs space-y-1 text-[#b8ffb8]">
+            <p>1. View all GitHub badges and their tier requirements</p>
+            <p>2. See your current progress toward each badge</p>
+            <p>3. Click a badge for detailed tier breakdown</p>
+            <p>4. Track progress over time as you farm</p>
+          </div>
+        )}
+      </div>
+
       {/* Page header */}
       <div>
         <h2 className={`text-2xl ${isDark ? 'text-[#00ff41] glow-green font-mono' : 'text-gray-900 font-bold'}`}>
