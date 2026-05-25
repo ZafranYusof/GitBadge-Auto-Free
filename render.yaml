@@ -2,7 +2,7 @@ services:
   - type: web
     name: gitbadge-auto-free
     runtime: node
-    buildCommand: cd frontend && npm install && npm run build && cp -r dist ../backend/public && cd ../backend && npm install
+    buildCommand: cd frontend && npm install && npm run build && cd .. && cp -r frontend/dist backend/public && cd backend && npm install
     startCommand: cd backend && npm start
     envVars:
       - key: NODE_ENV
